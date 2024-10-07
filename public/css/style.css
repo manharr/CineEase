@@ -1,0 +1,1341 @@
+/* Global Reset and Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: F3;
+    background-color: rgb(22, 21, 21);
+    margin: 0;
+    padding: 0;
+}
+
+/* Fonts */
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/Cinépolis.otf);
+}
+
+@font-face {
+    font-family: F2;
+    src: url(../fonts/BlackWidowMovie-d95Rg.ttf);
+}
+
+@font-face {
+    font-family: F3;
+    src: url(../fonts/Designer.otf);
+}
+
+@font-face {
+    font-family: F4;
+    src: url(../fonts/coolvetica\ rg\ it.otf);
+}
+
+@font-face {
+    font-family: F6;
+    src: url(../fonts/sussie.ttf);
+}
+
+/* Animations */
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Menu Styling */
+.menu {
+    background-color: #292929;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;
+    position: relative; /* Ensure positioning is controlled */
+}
+
+.setting-btn {
+    cursor: pointer;
+    position: relative;
+    width: 5em;
+    height: 3em;
+    border: none;
+    background-color: #292929;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    gap: 0.7em;
+    flex-direction: column;
+    transition-duration: 0.5s;
+}
+
+.setting-btn:hover {
+    background-color: #292929;
+}
+
+.bar {
+    height: 0.2em;
+    background: #fff;
+    border-radius: 1em;
+    position: relative;
+    top: 7px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.bar1 {
+    width: 40%;
+}
+
+.bar2 {
+    width: 70%;
+}
+
+.bar3 {
+    width: 90%;
+}
+
+.setting-btn:hover .bar1 {
+    width: 90%;
+}
+
+.setting-btn:hover .bar2 {
+    width: 70%;
+}
+
+.setting-btn:hover .bar3 {
+    width: 40%;
+}
+
+.logo {
+    color: white;
+    font-size: 2.8vw;
+    cursor: default;
+    font-family: myFont;
+    margin-right: auto; /* Ensure alignment on the left */
+    margin-left: 35px;
+    margin-top: 10px;
+}
+
+.logo span {
+    color: rgba(255, 255, 0, 0.914);
+}
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Align items vertically */
+}
+
+.menu ul li {
+    padding: 10px 2vw;
+
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3vw;
+    position: relative;
+    top: 6px;
+}
+
+.menu > ul > li > a:hover {
+    color: rgba(255, 255, 0, 0.914);
+    transition: color 0.5s;
+}
+
+.menu > ul > li > a:hover::after {
+    width: 100%; /* Fully expands the underline on hover */
+}
+
+.menu > ul > li > a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%; /* Start from the center */
+    width: 0; /* Starts with no width */
+    height: 2px;
+    background-color: #fff;
+    transform: translateX(-50%); /* Center the underline */
+    transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+}
+
+.menu > ul > li > a:hover::after {
+    width: 100%; /* Expand underline to full width */
+    left: 50%; /* Keep the origin in the center */
+    transform: translateX(-50%); /* Ensure it expands from center */
+}
+
+
+#login a {
+    padding: 10px 2vw;
+    border: 1px solid #2c2c2c;
+    background-color: yellow;
+    color: black;
+    font-size: 1.3vw;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    top: 4px;
+    text-decoration: none;
+}
+
+#login a::after {
+    display: none; /* Ensure no pseudo-element */
+}
+
+#login a:hover {
+    color: white;
+    border-color: white;
+    background: #292929;
+}
+
+#login .arrow {
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.4s ease;
+    font-size: 1.2vw;
+    transform: rotate(0deg);
+}
+
+#login a:hover .arrow {
+    transform: translateX(0px) rotate(310deg);
+}
+
+/* Profile Icon Styling */
+.profile-icon {
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    transform: scale(1.0);
+    background-color: #5e5d57;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    margin-top: -8px;
+    top: 11px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .menu {
+        padding: 0 2vw;
+    }
+
+    .logo {
+        font-size: 2.5vw;
+    }
+
+    .menu ul li {
+        padding: 10px 1.5vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        padding: 0 1vw;
+        flex-direction: row; /* Keep items in a row */
+        align-items: center; /* Center items vertically */
+        justify-content: space-between; /* Space between items */
+    }
+
+    .logo {
+        font-size: 4vw;
+        margin-right: 0;
+    }
+
+    .setting-btn {
+        margin-top: 0;
+    }
+
+    .menu ul {
+        flex-direction: row; /* Keep menu items in a row */
+        margin-right: 0;
+    }
+
+    .menu ul li {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .menu ul li a {
+        font-size: 4vw;
+    }
+}
+
+
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    width: 8vw; /* Adjusted width */
+    height: 8vw; /* Adjusted height */
+    border: none;
+    border-radius: 40%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(221, 237, 3);
+    bottom: -10px;
+    margin-top:-23px;
+    margin-left: 25px;
+
+}
+
+/* plus sign */
+.logout-btn .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn .sign svg {
+    width: 18px;
+}
+
+.logout-btn .sign svg path {
+    fill: rgb(8, 0, 0);
+}
+
+/* text */
+.logout-btn .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: rgb(2, 0, 0);
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.logout-btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.logout-btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+
+/* hover effect button's text */
+.logout-btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+/* button click effect */
+.logout-btn:active {
+    transform: translate(2px, 2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 85px;
+    background-color: #292929;
+    padding: 10px 0px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown ul li {
+    padding: 20px 40px;
+    /* Adjusted padding */
+    width: 350px;
+    transition: filter 0.3s ease;
+    /* Add transition for smooth blur effect */
+}
+
+
+
+
+.location-icon {
+    width: 40px;
+    /* Increase the size as needed */
+    height: auto;
+    margin-right: 10px;
+    /* Space between the icon and the text */
+    margin-left: -10px;
+    /* Move the icon to the left */
+    vertical-align: middle;
+    /* Align the icon with the text */
+}
+
+
+.dropdown ul li a {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown ul li a .checkmark {
+    margin-left: auto;
+    /* Keep the checkmark aligned to the right */
+}
+
+
+
+.dropdown ul li a:hover .location-icon {
+    transform: scale(1.1);
+    /* Slightly enlarge the icon on hover */
+    transition: 0.2s;
+}
+
+
+
+
+
+
+.dropdown ul li a {
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.dropdown ul li a .fas {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.dropdown ul li a:hover {
+    color: yellow;
+    transition: 0.3s;
+}
+
+.dropdown-btn a {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown hr {
+    border: none;
+    border-top: 3px dashed white;
+    /* Use dashed instead of dotted */
+    margin: 5px 0px;
+    /* Add some margin for spacing */
+}
+
+.dicon {
+    position: relative;
+    right: -5px;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out all;
+}
+
+.dropdown-btn:hover .dicon {
+    transform: rotate(180deg);
+}
+
+
+
+/* Updated style for the checkmark */
+.checkmark {
+    position: absolute;
+    right: 0px;
+    /* Adjust distance from the text */
+    top: 50%;
+    /* Align vertically */
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.checkmark::after {
+    content: '\2714';
+    /* Unicode for checkmark symbol */
+    font-family: 'Arial', sans-serif;
+    /* Choose appropriate font family */
+    font-size: 12px;
+    /* Adjust size of the checkmark */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    /* Color of the checkmark */
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Adjust visibility and animation on hover and when selected */
+.selected .checkmark::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Adjust border color on hover and when selected */
+.dropdown ul li a:hover .checkmark,
+.selected .checkmark {
+    border-color: #00cc00;
+    /* Green border color */
+    background-color: #00cc00;
+    /* Green fill color when selected */
+    color: #fff;
+    /* Text color */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    /* Below the form, but above the background */
+    background-color: rgba(15, 14, 14, 0.619);
+    /* Semi-transparent background */
+    display: none;
+    /* Hide by default */
+}
+.contact-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    /* Below the form, but above the background */
+    background-color: rgba(15, 14, 14, 0.619);
+    /* Semi-transparent background */
+    display: none;
+    /* Hide by default */
+}
+
+
+.blur-background {
+    filter: blur(5px);
+    /* Adjust blur amount as needed */
+}
+
+
+
+/* form login/regi */
+.form {
+    width: 450px;
+    height: 550px;
+    position: fixed;
+    /* Changed to fixed for popup behavior */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    /* Ensure it's above other content */
+    /* background: linear-gradient(to left, #292929, #171616); */
+    background: linear-gradient(to left, #302e2e, #171616);
+    padding: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+    /* Hide by default */
+    transition: top 0.8s ease;
+    /* Slide down transition */
+
+}
+
+.form-buttons {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 25px 15px #03010072;
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: white;
+    position: relative;
+    font-family: sans-serif;
+
+}
+
+
+
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to left, #ffd500d3, #ff6565d3);
+    border-radius: 30px;
+    transition: .5s;
+
+
+}
+
+.social-icon {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.social-icon img {
+    width: 27px;
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+.input-grp {
+    width: 250px;
+
+    position: relative;
+
+    left: 0px;
+    /* Shift the form to the left by 50px */
+    margin: auto;
+    /* Center align horizontally */
+    transition: left 0.4s ease;
+    /* Add transition for smoother animation */
+
+
+}
+
+.input-field {
+    color: white;
+    width: 100%;
+    padding: 12px 0;
+    margin: 15px 0;
+    /* Increase margin-bottom for space between inputs */
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+.submit-btn {
+    width: 85%;
+    font-size: 14px;
+
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #ffd500, #d34644d3);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    transition: 0.4s;
+    font-family: sans-serif;
+}
+
+#logbtn {
+    margin-top: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #010000;
+    /* Red background on hover */
+    background: linear-gradient(to right, #f11e1ad3, #f7eb0bd3);
+
+}
+
+
+
+
+
+
+#loginpage {
+    top: 10px;
+}
+
+#registerpage {
+    left: 360px;
+    bottom: 290px;
+
+}
+#registeruser{
+    margin-top: 10px;
+}
+
+.form-text {
+    text-align: center;
+    color: white;
+    font-size: 13px;
+    margin-top: 25px;
+    position: relative;
+    top: 14px;
+    /* color: transparent;
+    -webkit-text-stroke: 1px #fffdfd; */
+}
+
+.form-text a {
+    color: #ffd500;
+    text-decoration: none;
+    position: relative;
+
+}
+
+
+.form-text a:hover {
+    text-decoration: underline;
+}
+
+#signu {
+    position: relative;
+    top: 15px;
+
+}
+
+
+#passwordError {
+    color: red;
+    font-size: 11px;
+    /* Adjust font size as needed */
+    margin-top: 5px;
+    /* Optional: Add margin to separate from inputs */
+}
+
+.forgot-password-link {
+    display: block;
+    text-align: left;
+    color: #ffd500; /* Adjust color to match your design */
+    font-size: 12px;
+    text-decoration: none;
+    margin-top: -10px; /* Adjust margin if needed */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+
+.fa-eye {
+    content: '\f06e'; /* Unicode for eye icon */
+}
+
+.fa-eye-slash {
+    content: '\f070'; /* Unicode for eye-slash icon */
+}
+
+.input-field-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-field {
+    width: 100%;
+    padding: 13px -30px;
+    padding-right: 30px; /* Adjust to make space for the eye icon */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 8px;
+    top: 35%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ffffff83; /* Adjust based on your design */
+    display: none; /* Initially hidden */
+
+}
+
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #333; /* Darker background for better contrast */
+    padding: 10px 0; /* Adjust padding for better spacing */
+    border-radius: 8px; /* More rounded corners */
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+    min-width: 170px; /* Slightly wider for better spacing */
+    max-height: 200px; /* Set a maximum height */
+    overflow: hidden; /* Hide overflow to avoid scrollbars */
+    right: 45px;
+    top: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better separation */
+}
+
+/* Dropdown menu list styling */
+.dropdown-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block; /* Ensure ul is block for vertical alignment */
+}
+
+/* Styling for individual items in the dropdown */
+.dropdown-menu ul li {
+    padding: 15px 0px; /* More padding for improved spacing */
+    border-bottom: 1px solid #444; /* Darker border for separation */
+    box-sizing: border-box; /* Ensure padding is included in total height */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Vertically align items */
+}
+
+/* Remove border from the last item */
+.dropdown-menu ul li:last-child {
+    border-bottom: none;
+}
+
+/* Styling for links inside the dropdown menu */
+.dropdown-menu ul li a {
+    color: #f9f9f9; /* Light color for better readability */
+    font-size: 14px; /* Smaller font size for a more compact look */
+    display: flex; /* Flexbox for horizontal alignment */
+    align-items: center; /* Align icon and text vertically */
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease; /* Smooth color transition */
+    width: 100%; /* Ensure the link takes the full width */
+    top: -1px;
+    margin-left: 28px;
+}
+
+/* Styling for icons */
+.dropdown-menu ul li a i {
+    margin-right: 17px; /* Space between icon and text */
+    font-size: 16px; /* Adjust icon size to be smaller */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-menu ul li a:hover {
+    color: #ffcc00; /* Bright color on hover for better visibility */
+}
+
+
+
+
+
+
+
+
+
+
+
+.messageDiv {
+    display: none;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 0px; /* Adjusted to give space above the form */
+    left: 50%;
+    font-size: 15px;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Smoother opacity transition */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Container for profile icon and dropdown */
+/* Profile icon styling */
+/* Profile Icon */
+.profile-icon {
+    font-size: 20px; /* Adjust the font size as needed */
+    cursor: pointer;
+    display: inline-block;
+    position: relative; /* To position the dropdown menu */
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Smooth transition effect */
+    transform: scale(1.0); /* Scale up the icon */
+    background-color: #5e5d57; /* Default background color */
+    border-radius: 50%; /* Round shape */
+    text-align: center;
+    line-height: 40px; /* Center text vertically */
+    width: 40px; /* Ensure width is equal to height */
+    height: 40px; /* Ensure height is equal to width */
+    overflow: hidden; /* Hide overflow */
+    margin-top: -8px;
+    top: 11px;
+    margin-top: 1px;
+}
+
+
+
+/* Profile photo styles */
+.profile-icon img {
+    width: 100%; /* Make image fit container */
+    height: 100%; /* Make image fit container */
+    object-fit: cover; /* Cover the whole area */
+    border-radius: 50%; /* Round shape */
+}
+
+.profile-initials {
+    display: inline-block;
+    width: 40px; /* Width of the icon */
+    height: 40px; /* Height of the icon */
+    line-height: 40px; /* Center the text vertically */
+    border-radius: 50%; /* Round shape */
+    color: rgb(9, 9, 9); /* Text color */
+    background-color: #ffd900;
+    text-align: center; /* Center the text horizontally */
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Bold text */
+    user-select: none; /* Prevent text selection */
+    transition: 0.3s ease-in-out;
+}
+
+.profile-initials:hover{
+    color: #e6e6e6; /* Text color */
+    background-color: rgb(9, 9, 9);
+    transform: scale(0.9);
+    box-shadow: 0 0 0px 10px red;
+}
+
+
+/* menu bar */
+
+.sliding-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw; /* Adjusted to 80% of viewport width for better responsiveness */
+    max-width: 250px; /* Limit maximum width for large screens */
+    height: 100vh;
+    background: rgba(41, 41, 41, 0.7);
+    /* Semi-transparent background */
+    backdrop-filter: blur(6px);
+    /* Adjust blur for glass effect */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    /* Ensure it's above other content */
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    /* Optional: border for better glass effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align items from the top */
+    padding-top: 100px;
+    /* Space from the top */
+}
+
+.sliding-menu.active {
+    transform: translateX(0%);
+}
+
+.sliding-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    /* Center the text */
+}
+
+.sliding-menu ul li {
+    margin-bottom: 25px;
+    /* More space between items */
+}
+
+.sliding-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    /* Bigger font size */
+    transition: color 0.3s ease;
+}
+
+.sliding-menu ul li a:hover {
+    color: rgb(213, 213, 0);
+}
+
+/* Example CSS styles for the cross icon */
+.cross-icon {
+    position: absolute;
+    top: 15px;
+    /* Adjust position from the top */
+    right: 15px;
+    /* Adjust position from the right */
+    font-size: 24px;
+    /* Adjust the size of the icon */
+    cursor: pointer;
+    /* Add cursor pointer for interaction */
+    color: #ffffff;
+    /* Adjust the color of the icon */
+    z-index: 1000;
+    /* Ensure it's above other content */
+    transition: color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* Make it circular */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light background for visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.cross-icon:hover {
+    color: #e63b0b;
+    /* Change color on hover */
+    background-color: rgba(255, 255, 255, 0.136);
+    /* Slightly darker background on hover */
+}
+
+
+
+
+/* SUBSCRIPTION POPUP */
+.modal {
+    display: none; /* Ensure it's hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #121212;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    width: 40%;
+    max-width: 500px;
+    height: 38%;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif; /* Example of modern font */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+}
+.modal-content h2 {
+    margin-top: 0;
+    color: #050505;
+    margin-bottom: 10px; /* Added margin-bottom to create space */
+}
+
+.modal-content p {
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.modal-content ul li {
+    margin-bottom: 10px;
+    color: #040404;
+}
+.modal-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.modal-content ul li {
+    position: relative;
+    padding-left: 30px; /* Increased padding for space */
+    margin-bottom: 8px;
+    line-height: 1.6; /* Increased line height for better readability */
+}
+
+.modal-content ul li i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3498db; /* Color of the checkmark */
+    font-size: 17px; /* Adjusted size for better visibility */
+}
+
+.Btn1 {
+    background-color: #0fc815;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: 2px solid transparent; /* Ensure a transparent border initially */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transition background color and border color */
+}
+
+.Btn1:hover {
+    transition: 0.5s;
+    background-color: #010701;
+    border-color: white; /* Change border color on hover */
+    color: white;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 29px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 3, 3);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.Btn {
+    width: 160px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a);
+    background-size: 300%;
+    background-position: left;
+    color: #ffd277;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+    margin: 0 auto;
+    /* Center the button */
+}
+
+.Btn::before {
+    position: absolute;
+    content: "SUBSCRIBE";
+    color: #ffd277;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+    height: 90%;
+    border-radius: 8px;
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    background-size: 200%;
+}
+
+.Btn:hover {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.Btn:hover::before {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.Btn:active {
+    transform: scale(0.95);
+}
+
+/* Loader */
+
+/* Centering loader on the page */
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.907); /* Optional: adds a translucent background */
+    z-index: 9999; /* Make sure loader is on top of other elements */
+}
+
+.traffic-loader {
+    width: 50px;
+    height: 50px;
+    --c: radial-gradient(farthest-side, #fff 92%, #0000);
+    background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%, var(--c) 0 50%;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    animation: s8 1s infinite;
+    position: relative;
+}
+
+.traffic-loader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: 3px;
+    background: repeating-conic-gradient(#0000 0 35deg, #fff 0 90deg);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 3px), #000 0);
+    border-radius: 50%;
+}
+
+@keyframes s8 {
+    100% {
+        transform: rotate(0.5turn);
+    }
+}
+
+  
+
+/* Contact Form Container */
+
+/* Contact Form Container */
+.contact-form-container {
+    display: none;
+    position: absolute;
+    top: 150px;
+    right: 560px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    z-index: 1001; /* Above the overlay */
+}
+
+/* Contact Form Styling */
+#contactFormContent h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#contactFormContent label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#contactFormContent input[type="text"],
+#contactFormContent input[type="email"],
+#contactFormContent textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+#contactFormContent button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

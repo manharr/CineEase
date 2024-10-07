@@ -1,0 +1,487 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navbar */
+.navbar1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #171717;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Dropdown */
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #171717;
+    color: #f4efef;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content1 a:hover {
+    background-color: #ddd;
+}
+
+.dropdown1:hover .dropdown-content1 {
+    display: block;
+}
+
+/* Quick Book Button */
+.quick-book-btn {
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Exact Banner */
+.exact-banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 45px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.exact-left-arrow,
+.exact-right-arrow {
+    width: 520px;
+    height: 9px;
+    background-color: #ffd700;
+    position: relative;
+}
+
+.exact-left-arrow {
+    clip-path: polygon(0 100%, 10% 0, 100% 0, 100% 100%, 10% 100%);
+}
+
+.exact-right-arrow {
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 90% 100%, 0 100%);
+}
+
+.exact-banner-text {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Movie Container */
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    gap: 29px;
+    justify-content: flex-start;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.heart-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.heart-button.filled span {
+    color: red;
+}
+
+.heart-button span {
+    transition: color 0.2s;
+}
+
+.heart-button:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+/* Movie Card */
+.movie-card {
+    background-color: #363636;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    height: 495px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+.movie-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 309px;
+    object-fit: fill;
+}
+
+.badge {
+    position: absolute;
+    top: 7px;
+    left: 3px;
+    background-color: #59ff00;
+    color: #050202;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 1;
+}
+
+.badge-advance {
+    background-color: green;
+}
+
+.badge-promoted {
+    background-color: rgb(255, 222, 10);
+}
+
+.badge-discounted {
+    background-color: rgb(255, 79, 21);
+    font-weight: 1;
+    color: #fff;
+}
+
+.badge-release {
+    position: absolute;
+    top: 7px;
+    left: 133px;
+    background-color: #19ffc9;
+    color: #140e0e;
+    font-weight: 1;
+    font-size: 10px;
+}
+
+.movie-info {
+    padding: 10px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie-info h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #e2c715;
+    white-space: normal;
+    overflow: hidden;
+    max-height: 40px;
+    line-height: 1.2em;
+    font-weight: 1;
+}
+
+.movie-info p {
+    font-size: 14px;
+    color: #eae5e5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.movie-tags {
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.movie-tags2 {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: relative;
+    bottom: 5px;
+    left: -2px;
+}
+
+.movie-tags2 span {
+    font-size: 12px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #eee;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-card:hover .over {
+    opacity: 1;
+}
+
+.over-btn {
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.over-btn:hover {
+    background-color: #0c7bcc;
+}
+
+.over-btn:nth-child(2) {
+    background-color: #fff;
+    color: #333;
+}
+
+.over-btn:nth-child(2):hover {
+    background-color: #ddd;
+}
+
+.see-all-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.see-all-btn:hover {
+    background-color: #0c7bcc;
+}
+
+.over-btn2 {
+    background-color: #e7e1e1;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.over-btn2:hover {
+    background-color: #a0a0a0;
+}
+
+/* Play Trailer Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .navbar1 {
+        padding: 8px 0;
+    }
+
+    .exact-left-arrow,
+    .exact-right-arrow {
+        width: 400px;
+    }
+
+    .exact-banner-text {
+        font-size: 24px;
+        margin: 0 30px;
+    }
+
+    .movie-card {
+        width: 220px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar1 {
+        flex-direction: column;
+        padding: 5px 0;
+    }
+
+    .dropdown1 {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .dropbtn {
+        font-size: 14px;
+    }
+
+    .exact-left-arrow,
+    .exact-right-arrow {
+        width: 300px;
+    }
+
+    .exact-banner-text {
+        font-size: 20px;
+        margin: 0 20px;
+    }
+
+    .movie-card {
+        width: 200px;
+        height: 400px;
+    }
+
+    .movie-info {
+        height: 160px;
+    }
+
+    .movie-info h2 {
+        font-size: 16px;
+    }
+
+    .movie-info p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar1 {
+        padding: 5px 0;
+    }
+
+    .dropbtn {
+        font-size: 12px;
+    }
+
+    .exact-left-arrow,
+    .exact-right-arrow {
+        width: 200px;
+    }
+
+    .exact-banner-text {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
+    .movie-card {
+        width: 180px;
+        height: 350px;
+    }
+
+    .movie-info {
+        height: 140px;
+    }
+
+    .movie-info h2 {
+        font-size: 14px;
+    }
+
+    .movie-info p {
+        font-size: 10px;
+    }
+
+    .see-all-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

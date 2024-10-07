@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #1c1c1c, #434343);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+/* Container for the food items */
+.food-item-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 25px;
+  padding: 20px;
+  margin-right: 650px;
+  position: relative;
+  margin-left: 50px;
+  animation: fadeIn 1s ease-in-out;
+  justify-items: center; /* Center items in each column */
+}
+
+/* Food card styling */
+.food-card {
+  width: 200px; /* Set a fixed width for each food card */
+  height: 300px; /* Ensure consistent height for each card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+/* Hover effect for the card */
+.food-card:hover {
+  transform: translateY(-1px);
+}
+
+/* Image styling for food item */
+.food-image {
+  width: 120px; /* Set a fixed width */
+  height: 120px; /* Set a fixed height for uniformity */
+  object-fit: cover; /* Ensures images fill the space without distortion */
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Food info styling */
+.food-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.food-info p {
+  font-size: 14px;
+  color: #939191;
+  margin: 3px 0;
+}
+
+/* Price of the food */
+.food-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Add button for the food item */
+.food-add-btn {
+  background-color: #ff3366;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  left: -10px;
+  top: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.food-add-btn:hover {
+  background-color: #f10352;
+  color: black;
+}
+
+.food-remove-btn{
+  position: relative;
+  left: 20px;
+  top: -18px;
+  transition: 0.4s;
+}
+.food-remove-btn:hover{
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
+
+.ticket-container {
+    width: 410px;
+    height: 570px;
+    background: linear-gradient(135deg, #ffffff, #f2f2f2);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Lato', sans-serif;
+    color: #040404;
+    position: absolute;
+    right: 190px;
+    top: 90px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.ticket-header {
+    display: flex;
+    flex-direction: column; /* Stack the title on top and the details below */
+    border-bottom: 2px solid #747474;
+    padding-bottom: 20px;
+    margin-bottom: 20px; /* Reduced margin for better alignment */
+}
+
+.ticket-title#mv {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Space between the title and the details */
+}
+
+.ticket-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between each detail */
+    font-size: 14px;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    color: #666;
+  }
+
+.ticket-details span {
+    display: inline-block; /* Ensure they align horizontally */
+}
+
+.ticket-summary {
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px; /* Space between the details and the summary */
+}
+
+.selected-seats,
+.selected-food {
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.selected-seats p,
+.selected-food p {
+    margin: 0; /* Remove default margin */
+}
+
+.total-price {
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.total-price p {
+    margin: 0; /* Remove default margin */
+}
+
+#t2 {
+    position: relative;
+    top: 10px;
+}
+
+#total {
+    position: relative;
+    top: 10px;
+}
+
+.fees-taxes {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.book-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    position: relative;
+    top: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.book-btn:hover {
+    background: linear-gradient(135deg, #ff4500, #ff6347);
+    transform: scale(1.05);
+}
+
+.promocode-bonuses-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjusted margin for better spacing */
+}
+
+.promocode-btn {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  margin-top: 5px;
+  top: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none; /* Remove underline */
+}
+
+.promocode-btn:hover {
+  background-color: #f2f2f2;
+  border-color: #bbb;
+}
+
+input[type="submit"].apply-btn {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 19px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"].apply-btn:hover {
+  background-color: #ff4500;
+}
+#promo-message {
+  position: absolute; /* Position it absolutely within the container */
+  left: 30px;
+  top: 62%;
+  color: red;
+  background: #fff; /* Ensure message has a background to be visible */
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: shadow for better visibility */
+  display: none; /* Initially hidden */
+}
+
+
+#applied-promo-code{
+  position: relative;
+  font-size: 15px;
+  top: 10px;
+}
+
+
+.food-remove-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+
+#gst-info{
+  font-size: 11px;
+  position: relative;
+  top: 14px;
+}
+
+#taxes-info{
+  font-size: 11px;
+  position: relative;
+  top: 13px;
+}

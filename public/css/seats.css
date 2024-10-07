@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #1c1c1c, #434343);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.container {
+  margin-bottom: 30px;
+  position: relative;
+  left: -310px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.price-label {
+  color: #ccc;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 7px 0; 
+  text-align: left;
+  position: relative;
+  left: 24px;
+}
+/* .seat-selection-wrapper {
+  border: 2px solid #fff; 
+  padding: 15px;
+  border-radius: 10px; 
+  max-width: 400px; 
+  position: relative;
+  left: -400px;
+} */
+
+
+
+.seat span{
+  font-size: 12px;
+  color: white;
+}
+.seat {
+  background-color: #3a3a48;
+  height: 38px;
+  width: 45px;
+  margin: 9px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: transparent; /* Seat number remains hidden */
+  border: 1px solid #999898; 
+  border-radius: 6px; /* Slightly more rounded for modern feel */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.seat.selected {
+  background-color: #25edff;
+  color: #000; 
+}
+#selected{
+  background-color: #25edff;
+  color: #000; 
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+.seat:nth-of-type(9) {
+  margin-right: 30px;
+}
+
+
+
+.rname {
+  width: 10px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px; 
+}
+
+
+
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #ddd;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  left: -300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ease-in-out;
+}
+#scase{
+  height: 30px;
+  width: 30px;
+}
+#selected{
+  height: 30px;
+  width: 30px;
+}
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+
+.screen {
+  background: linear-gradient(135deg, #3a3a3a, #656565); /* A deeper, more sophisticated gradient */
+  height: 70px; /* Slightly increased height for prominence */
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 10px; /* Soft rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* More pronounced shadow for depth */
+  transform: perspective(600px) rotateX(-20deg); /* More natural rotation effect */
+  position: relative;
+  left: 8px;
+  margin-top: 50px;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for interactivity */
+.screen:hover {
+  transition: 0.6s;
+  background: linear-gradient(135deg, #3e3e3e, #666666); /* Darker on hover */
+}
+
+.screen:before {
+  content: "SCREEN THIS WAY"; /* Clearer, more engaging message */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px; /* Larger font for better visibility */
+  color: #fff;
+  transition: 0.4s;
+
+  letter-spacing: 2px; /* Slightly more space for readability */
+  font-weight: 600; /* Semi-bold for emphasis */
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow for text */
+  padding: 10px 20px; /* Padding for a button-like appearance */
+  border-radius: 8px; /* Rounded background */
+}
+
+/* Optional hover effect for text */
+.screen:hover:before {
+  transition: 0.4s;
+
+  color: #ffd700; /* Golden text color on hover */
+}
+
+
+p.text {
+  margin: 5px 0;
+  position: relative;
+  left: -400px;
+}
+
+p.text span {
+  color: #6feaf6;
+}
+
+/* Ticket Container */
+.ticket-container {
+  width: 410px;
+  height: 570px;
+  background: linear-gradient(135deg, #ffffff, #f2f2f2);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Lato', sans-serif;
+  color: #040404;
+  position: absolute;
+  right: 190px;
+  top: 90px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.ticket-header {
+  display: flex;
+  flex-direction: column; /* Stack the title on top and the details below */
+  border-bottom: 2px solid #747474;
+  padding-bottom: 25px;
+  margin-bottom: 28px;
+}
+
+.ticket-title#mv {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px; /* Space between the title and the details */
+}
+
+.ticket-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between each detail */
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.ticket-details span {
+  display: inline-block; /* Ensure they align horizontally */
+}
+
+#mv3 {
+  font-size: 15px;
+  color: #333;
+  font-weight: bold;
+  margin-top: 13px; 
+}
+
+
+
+
+
+.ticket-summary {
+  font-size: 16px;
+  font-weight: bold;
+  color: #040404;
+  position: relative;
+  top: 3px;
+}
+
+/* Selected Seats Section */
+.selected-seats {
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected-seats p {
+  position: relative;
+  top: -15px;
+}
+
+/* Total Price Section */
+.total-price {
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.total-price p {
+  position: relative;
+  top: -15px;
+}
+
+#hr{
+  position: relative;
+  top: 20px;
+}
+
+#t2{
+  position: relative;
+  top: 40px;
+}
+#total{
+  position: relative;
+  top: 26px;
+}
+.fees-taxes {
+  font-size: 12px;
+  color: #666;
+  margin-top: 20px;
+  text-align: right;
+}
+
+
+/* Book Button */
+.book-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ff6347, #ff4500);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  position: relative;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.book-btn:hover {
+  background: linear-gradient(135deg, #ff4500, #ff6347);
+  transform: scale(1.05);
+}
+
+
+/* Promocode and Bonuses Buttons */
+.promocode-bonuses-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.promocode-btn, .bonuses-btn {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.promocode-btn:hover, .bonuses-btn:hover {
+  background-color: #f2f2f2;
+  border-color: #bbb;
+}
+

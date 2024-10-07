@@ -1,0 +1,140 @@
+/* Global Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0b0b0b; /* Slightly darker background */
+    color: #f4f4f4; /* Lighter text for better contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent any extra scrolling */
+}
+
+/* Container Styling */
+.success-container {
+    text-align: center;
+    padding: 40px 60px; /* Extra padding for a more premium feel */
+    background-color: #1a1a1a;
+    border-radius: 25px; /* More rounded corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Deeper shadow for depth */
+    animation: fadeIn 0.7s ease-in-out;
+    width: 85%;
+    max-width: 650px; /* Increased width for a more prominent layout */
+}
+
+/* Title Styling */
+.success-container h1 {
+    font-size: 3rem; /* Larger, more eye-catching font size */
+    margin-bottom: 20px;
+    color: #FFC300; /* Slightly warmer gold */
+    letter-spacing: 2px; /* More spaced out for a sophisticated look */
+    font-weight: 600;
+}
+
+/* Paragraph Styling */
+.success-container p {
+    font-size: 1.2rem; /* Larger paragraph font size */
+    color: #b3b3b3; /* Softer color for text */
+    margin-bottom: 40px; /* More spacing below text */
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+/* Button Container */
+.button-container {
+    margin-top: 40px;
+}
+
+/* Button Styling */
+.btn {
+    border: none;
+    padding: 14px 40px; /* More padding for a premium button size */
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Subtle shadow for buttons */
+}
+
+.view-ticket {
+    background-color: #FFC300;
+    color: #0d0d0d;
+    box-shadow: 0 2px 20px rgba(255, 195, 0, 0.5); /* Stronger shadow for focus */
+}
+
+.home-button {
+    background-color: #444444;
+    color: #FFC300;
+    box-shadow: 0 8px 20px rgba(68, 68, 68, 0.5);
+}
+
+/* Button Hover Effects */
+.btn:hover {
+    transform: translateY(-5px); /* Slightly increased hover effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Bolder hover shadow */
+}
+
+.view-ticket:hover {
+    background-color: #FFB900; /* More vibrant gold on hover */
+}
+
+.home-button:hover {
+    background-color: #555555; /* Lighter gray on hover */
+}
+
+/* Checkmark Animation */
+.checkmark-container {
+    margin-bottom: 30px;
+    padding-top: 20px; /* Add top padding for better spacing */
+}
+
+.checkmark {
+    width: 130px; /* Slightly larger */
+    height: 130px;
+    stroke-width: 4;
+    stroke: #FFC300;
+    fill: none;
+    stroke-linecap: round;
+    animation: checkmark 0.6s ease-in-out forwards;
+}
+
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: stroke 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.4s forwards;
+}
+
+/* Animations */
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes checkmark {
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
