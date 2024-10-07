@@ -4,7 +4,7 @@ import { getFirestore, setDoc, doc, onSnapshot  } from "https://www.gstatic.com/
 
 
 const firebaseConfig = {
-    apiKey: "AIzM",
+    apiKey: "API",
     authDomain: "login-form-c51dc.firebaseapp.com",
     projectId: "login-form-c51dc",
     storageBucket: "login-form-c51dc.appspot.com",
