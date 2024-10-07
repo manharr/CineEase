@@ -2,15 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const proceedPaymentButton = document.getElementById('proceed-payment-btn');
 
     proceedPaymentButton.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent the default form submission
+        e.preventDefault(); 
 
-        // Get the total price and convert to paise (smallest currency unit)
         const totalPriceText = document.getElementById('total').innerText.replace('₹', '').trim();
-        const totalPrice = Math.round(parseFloat(totalPriceText) * 100); // Convert to paise and ensure integer value
+        const totalPrice = Math.round(parseFloat(totalPriceText) * 100);
 
         var options = {
-            "key": "rzp_test_IfnJTvD7OUgclb", // Enter the Key ID generated from the Dashboard
-            "amount": totalPrice, // Amount in paise
+            "key": "a_key", 
+            "amount": totalPrice,
             "currency": "INR",
             "name": "CineEase",
             "description": "Test Transaction",
