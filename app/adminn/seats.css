@@ -1,0 +1,246 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container Styles */
+.container {
+    margin-bottom: 30px;
+    position: relative;
+    left: 0px;
+    top: 20px;
+    animation: fadeIn 1s ease-in-out;
+    max-width: 800px; /* Limit width for a compact design */
+    background: #2a2a2a; /* Dark container background */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.ticket-container {
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 0.5rem; /* Rounded corners */
+    padding: 10px; /* Inner spacing */
+    margin: -10px auto; /* Center the container */
+    max-width: 600px; /* Maximum width */
+}
+
+.ticket-header {
+    margin-bottom: 15px; /* Space between header and details */
+}
+
+.ticket-title {
+    font-size: 1.5rem; /* Title font size */
+    font-weight: bold; /* Bold title */
+    color: #f3f3f3; /* Darker color for title */
+}
+
+.ticket-details {
+    font-size: 1rem; /* Details font size */
+    color: #ffffff; /* Slightly lighter than title */
+    line-height: 1.5; /* Space between lines */
+}
+
+.reserve-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 1rem; /* Button font size */
+    border-radius: 0.3rem; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.reserve-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.reserve-button:active {
+    transform: translateY(0); /* Reset on click */
+}
+
+/* Seat Selection Styles */
+.seat-selection-wrapper {
+    margin: 20px 0;
+}
+
+.screen {
+    background: linear-gradient(135deg, #3a3a3a, #4e4e4e); /* Darker gradient */
+    height: 70px; /* Slightly increased height for prominence */
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 10px; /* Soft rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* More pronounced shadow for depth */
+    transform: perspective(600px) rotateX(-20deg); /* More natural rotation effect */
+    position: relative;
+    left: 8px;
+    margin-top: 50px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for interactivity */
+.screen:hover {
+    transition: 0.6s;
+    background: linear-gradient(135deg, #4a4a4a, #666666); /* Darker on hover */
+}
+
+.screen:before {
+    content: "SCREEN THIS WAY"; /* Clearer, more engaging message */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px; /* Larger font for better visibility */
+    color: #fff;
+    transition: 0.4s;
+    letter-spacing: 2px; /* Slightly more space for readability */
+    font-weight: 600; /* Semi-bold for emphasis */
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Soft shadow for text */
+    padding: 10px 20px; /* Padding for a button-like appearance */
+    border-radius: 8px; /* Rounded background */
+}
+
+/* Optional hover effect for text */
+.screen:hover:before {
+    transition: 0.4s;
+    color: #ffd700; /* Golden text color on hover */
+}
+
+/* Row and Seat Styles */
+.row {
+    display: flex;
+}
+
+.rname {
+    width: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px; 
+}
+
+.seat {
+    background-color: #3a3a48; /* Seat background */
+    height: 38px;
+    width: 45px;
+    margin: 9px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: transparent; /* Seat number remains hidden */
+    border: 1px solid #999898; 
+    border-radius: 6px; /* Slightly more rounded for modern feel */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.seat.selected {
+    background-color: #25edff; /* Bright selection color */
+    color: #000; 
+}
+
+.seat.occupied {
+    background-color: #ffffff; /* Darker for occupied seats */
+}
+
+.seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.showcase {
+    background: rgba(0, 0, 0, 0.8); /* Darker showcase background */
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #ddd;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.showcase li small {
+    margin-left: 10px;
+}
+
+/* Price Label Styles */
+.price-label {
+    color: #ccc;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 7px 0; 
+    text-align: left;
+    position: relative;
+    left: 24px;
+}
+
+/* Movie Info and Button Container */
+.ticket-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a; /* Dark background for ticket info */
+    border: 1px solid #444; /* Lighter border */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.ticket-header {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px; /* Space between movie info and button */
+}
+
+.ticket-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.total-price {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Booking Button */
+.book-btn {
+    background-color: #3498db; /* Blue for the booking button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+@media (max-width: 600px) {
+    .ticket-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ticket-header {
+        margin-right: 0; /* Remove right margin for smaller screens */
+    }
+}
