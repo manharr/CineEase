@@ -2,20 +2,20 @@
 class Movie {
     public static function getNowShowing() {
         global $con;
-        $today = date('Y-m-d'); // Get today's date
+        $today = date('Y-m-d'); 
 
         $updateQuery = "UPDATE movie 
                         SET coming_soon = 0 
                         WHERE coming_soon = 1 
                         AND (sdate <= '$today' OR status = 'Advance Booking')";
 
-        // Check if the update query executed successfully
+       
         if (!mysqli_query($con, $updateQuery)) {
-            // Output any error from the database
+            
             die('Error updating coming_soon status: ' . mysqli_error($con));
         }
 
-        // Fetch all 'Now Showing' movies
+        
         $query = "SELECT * FROM movie 
                   WHERE coming_soon = 0 
                   AND (sdate <= '$today' OR status = 'Advance Booking')  /* Show movies in Advance Booking */
@@ -42,13 +42,13 @@ class Movie {
 
     public static function getComingSoon() {
         global $con;
-        $today = date('Y-m-d'); // Get today's date
+        $today = date('Y-m-d'); 
 
-        // Fetch movies that are still 'Coming Soon' with sdate in the future and not 'Advance Booking'
+        
         $query = "SELECT * FROM movie 
                   WHERE coming_soon = 1 
                   AND sdate > '$today'
-                  AND status != 'Advance Booking'";  // Exclude movies with 'Advance Booking' from Coming Soon
+                  AND status != 'Advance Booking'"; 
         
         $result = mysqli_query($con, $query);
         $movies = [];
