@@ -1,17 +1,17 @@
 <?php
 class Theatre {
     public static function getAll() {
-        global $con; // Ensure $con is accessible
+        global $con; 
         try {
             $query = 'SELECT * FROM theatre';
             $result = mysqli_query($con, $query);
             if ($result) {
-                return mysqli_fetch_all($result, MYSQLI_ASSOC); // Return as associative array
+                return mysqli_fetch_all($result, MYSQLI_ASSOC); 
             } else {
                 throw new Exception('Query failed: ' . mysqli_error($con));
             }
         } catch (Exception $e) {
-            echo 'Query failed: ' . $e->getMessage(); // Display any query errors
+            echo 'Query failed: ' . $e->getMessage(); 
             return [];
         }
     }
