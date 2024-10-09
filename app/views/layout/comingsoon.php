@@ -34,7 +34,7 @@
                 </div>
                 
                 <div class="over">
-                    <!-- <a href="<?php echo $trailerLink ?> " target="_blank"><button class="over-btn2">Watch Trailer</button> </a> -->
+                    <!-- <a href="<?php echo $trailerLink ?> " target="_blank"> <button class="over-btn2">Watch Trailer</button> </a> -->
                 </div>
             </div>
             <?php
