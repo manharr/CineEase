@@ -70,6 +70,7 @@ class SeatSelectionModel
         $theatreRun = mysqli_query($con, $theatreQuery);
         return mysqli_fetch_assoc($theatreRun);
     }
+
     public static function getSeats($id, $showTimeId, $date)
     {
         global $con;

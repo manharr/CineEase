@@ -40,12 +40,10 @@ class SeatBookingModel
             $stmt->bind_param('siisss', $firebaseUid, $movieId, $showTimeId, $seatRow, $seatNumber, $date);
             $stmt->execute();
             
-            // Commit transaction if booking succeeds
             $con->commit();
             return true;
 
         } catch (Exception $e) {
-            // Rollback transaction in case of an error
             $con->rollback();
             return false;
         }

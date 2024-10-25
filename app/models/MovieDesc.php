@@ -146,23 +146,5 @@ class MovieDesc {
     }
     
 
-    public static function fetchMovieRatings($movie_name, $omdb_api_key) {
-        $movie_name_encoded = urlencode($movie_name);
-        $omdb_url = "http://www.omdbapi.com/?t=$movie_name_encoded&apikey=$omdb_api_key";
-        $omdb_response = file_get_contents($omdb_url);
-        $omdb_data = json_decode($omdb_response, true);
-
-        if ($omdb_data && $omdb_data['Response'] == 'True') {
-            return [
-                'imdb' => $omdb_data['imdbRating'] ?? 'N/A',
-                'rotten_tomatoes' => $omdb_data['Ratings'][1]['Value'] ?? 'N/A',
-            ];
-        } else {
-            return [
-                'imdb' => 'N/A',
-                'rotten_tomatoes' => 'N/A',
-            ];
-        }
-    }
 }
 ?>
