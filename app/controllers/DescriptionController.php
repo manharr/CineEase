@@ -3,7 +3,6 @@ require_once '../app/models/MovieDesc.php';
 date_default_timezone_set('Asia/Kolkata'); 
 
 class DescriptionController {
-    private $omdb_api_key = 'bb0aebb3';
 
     public function description($encoded_id) {
         $movie = MovieDesc::getMovieById($encoded_id);
@@ -18,14 +17,12 @@ class DescriptionController {
 
             // Fetch all dates including the selected date
             list($dates, $defaultSelectedDate) = MovieDesc::getAllDates($dateRange['sdate'], $dateRange['edate'], $status);
-            $ratings = MovieDesc::fetchMovieRatings($movie['mv_name'], $this->omdb_api_key);
 
             $actors = explode(',', $movie['cast']);
             $actor_data = [];
             foreach ($actors as $actor) {
                 $actor_data[] = [
                     'name' => trim($actor),
-                    'image' => $this->fetchActorImage(trim($actor))
                 ];
             }
 
@@ -64,19 +61,6 @@ class DescriptionController {
         }
     }
 
-    private function fetchActorImage($actor_name) {
-        $actor_name_encoded = urlencode($actor_name);
-        $tmdb_api_key = 'dcfa7bf7b0d21c92cf188ed51682479e';
-        $tmdb_url = "https://api.themoviedb.org/3/search/person?api_key=$tmdb_api_key&query=$actor_name_encoded";
-
-        $tmdb_response = file_get_contents($tmdb_url);
-        $tmdb_data = json_decode($tmdb_response, true);
-
-        if (!empty($tmdb_data['results']) && !empty($tmdb_data['results'][0]['profile_path'])) {
-            return 'https://image.tmdb.org/t/p/w200' . $tmdb_data['results'][0]['profile_path'];
-        } else {
-            return 'default_actor_image.jpg'; 
-        }
-    }
+    
 }
 ?>
